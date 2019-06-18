@@ -1,0 +1,7 @@
+# 端口配置
+server:
+  port: 9200
+  servlet:
+    context-path: /
+
+
