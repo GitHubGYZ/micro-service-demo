@@ -1,0 +1,37 @@
+# 端口配置
+server:
+  port: 9100
+  servlet:
+    context-path: /
+
+# mybatis 配置
+mybatis:
+  mapper-locations: classpath:mapping/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.example.microservicesimpleprovideruser.entity # 注意：对应实体类的路径
+  configuration:
+    call-setters-on-nulls: true
+
+# spring 基础配置
+spring:
+  # mysql 配置
+  datasource:
+    url: jdbc:mysql://127.0.0.1/microService?useUnicode=true&characterEncoding=utf8&useSSL=false&useAffectedRows=true&allowMultiQueries=true&serverTimezone=UTC
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+
+# 配置actuator显示detail
+management:
+  endpoint:
+    health:
+      show-details: always
+
+# 配置显示info信息
+info:
+  app:
+    name: micro-service-simple-provider-user
+    java:
+      source: 1.8
+
+
+
