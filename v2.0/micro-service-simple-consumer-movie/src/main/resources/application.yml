@@ -1,0 +1,35 @@
+# 端口配置
+server:
+  port: 9200
+  servlet:
+    context-path: /
+
+
+# spring 基础配置
+spring:
+  application:
+    name: micro-service-consumer-movie
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9300/eureka
+    instance:
+      prefer-ip-address: true #将本机的IP注册上去，如果为false 注册的是操作系统hostname
+
+
+# 配置actuator显示detail
+management:
+  endpoint:
+    health:
+      show-details: always
+
+# 配置显示info信息
+info:
+  app:
+    name: micro-service-consumer-movie
+    java:
+      source: 1.8
+

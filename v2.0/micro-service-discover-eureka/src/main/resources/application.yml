@@ -1,0 +1,12 @@
+# 端口配置
+server:
+  port: 9300
+
+eureka:
+  client:
+    registerWithEureka: false #是否注册 eureka 集群的时候要更改
+    fetchRegistry: false  # 是否同步 eureka 集群的时候要更改
+    serviceUrl:
+      defaultZone: http://localhost:9300/eureka/
+
+
