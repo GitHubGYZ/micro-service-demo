@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: eureka-001
+
+# 端口配置
+server:
+  port: 9301
+
+eureka:
+  instance: peer1
+  client:
+    registerWithEureka: true #是否注册 默认就是true eureka 集群的时候要更改
+    fetchRegistry: true # 是否同步 默认就是true eureka 集群的时候要更改
+    serviceUrl:
+      defaultZone: http://peer2:9302/eureka/ #注册到peer2上
+
+

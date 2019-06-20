@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: eureka-002
+
+# 端口配置
+server:
+  port: 9302
+
+eureka:
+  instance: peer2
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:9301/eureka/ #注册到peer1上
+
