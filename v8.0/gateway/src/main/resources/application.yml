@@ -1,0 +1,26 @@
+server:
+  port: 9081
+
+spring:
+  application:
+    name: GATEWAYSERVICE
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+      routes:
+        - id: MICRO-SERVICE-CONSUMER-MOVIE
+          uri: lb://MICRO-SERVICE-CONSUMER-MOVIE
+          predicates:
+            - Path=/movie/**
+          filters:
+            - StripPrefix=1
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:9301/eureka/
+
